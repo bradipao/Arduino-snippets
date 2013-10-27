@@ -7,5 +7,6 @@ This repository contains snippets, photo and notes collected during development 
 
 **BasicI2c** : Based on the BasicUartComm skeleton, at present implements I2C interface setup through Wire library and initiate a transmission.
 
-**I2C_adt7410 : Read temperature from I2C sensor ADT7410 and print result on UART. Init and read operations are UART controlled.
+**I2C_adt7410** : Read temperature from I2C sensor ADT7410 and print result on UART. Init and read operations are UART controlled.
 
+**BasicWebserver** : Hello-world webserver using Arduino UNO and Ethernet Shield. Board initializes serial port, then enables ethernet and wait for DHCP-assigned IP. Once IP is obtained, it is forwarded to Serial output. Opening IP in a browser, the basic arduino web server provides the Hello World page.
