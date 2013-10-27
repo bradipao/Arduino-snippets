@@ -10,3 +10,5 @@ This repository contains snippets, photo and notes collected during development 
 **I2C_adt7410** : Read temperature from I2C sensor ADT7410 and print result on UART. Init and read operations are UART controlled.
 
 **BasicWebserver** : Hello-world webserver using Arduino UNO and Ethernet Shield. Board initializes serial port, then enables ethernet and wait for DHCP-assigned IP. Once IP is obtained, it is forwarded to Serial output. Opening IP in a browser, the basic arduino web server provides the Hello World page.
+
+**WebserverParserequest** : Arduino webserver, with DHCP asigned IP provided through serial output. Parse incoming requests of a given format and extract params. This example is valid for specific parameters, but can be easily adapted.
