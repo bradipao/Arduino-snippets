@@ -13,7 +13,7 @@ This repository contains snippets, photo and notes collected during development 
 
 **WebserverParserequest** : Arduino webserver, with DHCP asigned IP provided through serial output. Parse incoming requests of a given format and extract params. This example is valid for specific parameters, but can be easily adapted.
 
-**WebserverParserequest** : An Android app with network support that connects to Arduino+Ethernet board programmed with basic webserver that provides real-time data in JSON format.
+**WebserverSendjson** : An Android app with network support that connects to Arduino+Ethernet board programmed with basic webserver that provides real-time data in JSON format.
 
   * Youtube demo : [http://youtu.be/0ggJLiD6sDA](http://youtu.be/0ggJLiD6sDA)
   * Wiki page : [https://github.com/bradipao/Arduino-snippets/wiki/WebserverSendjson](https://github.com/bradipao/Arduino-snippets/wiki/WebserverSendjson)
