@@ -11,9 +11,11 @@ This repository contains snippets, photo and notes collected during development 
 
 **BasicWebserver** : Hello-world webserver using Arduino UNO and Ethernet Shield. Board initializes serial port, then enables ethernet and wait for DHCP-assigned IP. Once IP is obtained, it is forwarded to Serial output. Opening IP in a browser, the basic arduino web server provides the Hello World page.
 
-**WebserverParserequest** : Arduino webserver, with DHCP asigned IP provided through serial output. Parse incoming requests of a given format and extract params. This example is valid for specific parameters, but can be easily adapted.
+**WebserverParserequest** : Arduino webserver, with DHCP assigned IP provided through serial output. Parse incoming requests of a given format and extract params. This example is valid for specific parameters, but can be easily adapted.
 
 **WebserverSendjson** : An Android app with network support that connects to Arduino+Ethernet board programmed with basic webserver that provides real-time data in JSON format.
 
   * Youtube demo : [http://youtu.be/0ggJLiD6sDA](http://youtu.be/0ggJLiD6sDA)
   * Wiki page : [https://github.com/bradipao/Arduino-snippets/wiki/WebserverSendjson](https://github.com/bradipao/Arduino-snippets/wiki/WebserverSendjson)
+  
+**WebserverHttpgetJsonres** : Arduino webserver, with DHCP assigned IP provided through serial output. Parse incoming requests of a given format, extract params and update internal status of params. Response is always the whole internal status in JSON format. Serial output is used basically for debug and demonstration.
