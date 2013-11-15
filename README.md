@@ -19,3 +19,5 @@ This repository contains snippets, photo and notes collected during development 
   * Wiki page : [https://github.com/bradipao/Arduino-snippets/wiki/WebserverSendjson](https://github.com/bradipao/Arduino-snippets/wiki/WebserverSendjson)
   
 **WebserverHttpgetJsonres** : Arduino webserver, with DHCP assigned IP provided through serial output. Parse incoming requests of a given format, extract params and update internal status of params. Response is always the whole internal status in JSON format. Serial output is used basically for debug and demonstration.
+
+**WebserverAm2302** : Arduino+Ethernet board that interfaces with AM2302(DHT22) humidity+temperature sensor and that implements basic webserver that provides real-time temperature and humidity data in JSON format.
