@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="prefkey_network_connection"
+        android:title="Network connection" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefkey_autoscan"
+            android:summaryOff="Use automatic subnet scan"
+            android:title="Automatic scan" />
+
+        <EditTextPreference
+            android:defaultValue="http://10.0.0.14/cantuina"
+            android:key="prefkey_network_address"
+            android:title="Connection URL"
+            android:summary="Address for connection" />
+        <EditTextPreference
+            android:defaultValue="1000"
+            android:key="prefkey_scan_timeout"
+            android:title="Autoscan timeout"
+            android:summary="Time in millisecond between scans" />
+        <EditTextPreference
+            android:defaultValue="1000"
+            android:key="prefkey_cont_interval"
+            android:title="Readout interval"
+            android:summary="Time between readout in continuous mode" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
