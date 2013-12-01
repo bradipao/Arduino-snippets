@@ -7,6 +7,11 @@
    - read DHT22 am2302 sensor with DHTlib http://playground.arduino.cc/Main/DHTLib
    - answer in json format
    
+   v.20131201
+      - added define UARTDEBUG to enable/disable Serial debug output
+      - wait ethernet forevere on setup()
+      - hwid is now the MAC address, for multi-arduino support on the same network
+      - time from millis() info added
  */
 
 // include
@@ -14,14 +19,19 @@
 #include <Ethernet.h>
 #include <dht.h>
 
+// debug ON-OFF
+#define UARTDEBUG 1
+
 // define
 #define DHT22_PIN 6
 
 // globals
+unsigned long time,delta;
 char cmd;
 char _buf[50];
 int ethok=0;
-byte mac[] = { 0x00,0xAA,0xBB,0xCC,0xDE,0x02 };
+//byte mac[] = { 0x00,0xAA,0xBB,0xCC,0xDE,0x02 };
+byte mac[] = { 0xDE,0xAA,0xBB,0xCC,0xDD,0x01 };
 IPAddress ip;
 dht DHT;
 
@@ -39,34 +49,49 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect
   }
-  Serial.println("-- UART READY");
+  if (UARTDEBUG) Serial.println("-- UART READY");
   
   // DHT22 test
   int chk = DHT.read22(DHT22_PIN);
   switch (chk) {
     case DHTLIB_OK:  
-		Serial.println("-- DHT22 READY"); 
-		break;
+      if (UARTDEBUG) Serial.println("-- DHT22 READY"); 
+      break;
     case DHTLIB_ERROR_CHECKSUM: 
-		Serial.println("-- DHT22 checksum error"); 
-		break;
+      if (UARTDEBUG) Serial.println("-- DHT22 checksum error"); 
+      break;
     case DHTLIB_ERROR_TIMEOUT: 
-		Serial.println("-- DHT22 time out error"); 
-		break;
+      if (UARTDEBUG) Serial.println("-- DHT22 time out error");
+      break;
     default: 
-		Serial.println("-- DHT22 unknown error"); 
-		break;
+      if (UARTDEBUG) Serial.println("-- DHT22 unknown error"); 
+      break;
   }
   
   // ethernet setup (using DHCP can be blocking for 60 seconds)
+  while (ethok==0) restartEthernetShield();
+
+}
+
+void restartEthernetShield() {  
+  delay(100);
+  if (UARTDEBUG) Serial.println("-- RESTART ETHERNET SHIELD");
   ethok = Ethernet.begin(mac);
-  if (ethok==0) Serial.println("ERROR : failed to configure Ethernet");
-  else {
+  if (ethok==0) {
+    if (UARTDEBUG) Serial.println("-- ERROR : failed to configure Ethernet");
+  } else {
+    // extract ip
     ip = Ethernet.localIP();
-    formatIP(ip);
-    Serial.print("-- IP ADDRESS is ");
-    Serial.println(_buf);
+    // start server
+    server.begin();
+    // start listening for clients
+    if (UARTDEBUG) {
+      formatIP(ip);
+      Serial.print("-- IP ADDRESS is ");
+      Serial.println(_buf);
+    }
   }
+  delay(100);
 }
 
 // loop routine
@@ -76,7 +101,8 @@ void loop() {
   if (ip[0]!=0) {
     EthernetClient client = server.available();   // listen to client connecting
     if (client) {
-      //Serial.println("ETHERNET : new client http request");
+      // new client http request
+      time = millis();
       boolean currentLineIsBlank = true;   // an http request ends with a blank line
       while (client.connected()) {
         if (client.available()) {
@@ -106,7 +132,14 @@ void loop() {
               client.print("{");
               // result header
               client.print("\"res\":\"OK\"");
-              client.print(",\"hwid\":\"12345678\"");
+              formatMAC();
+              client.print(",\"hwid\":\"");
+              client.print(_buf);
+              client.print("\"");
+              // time
+              client.print(",\"time\":\"");
+              client.print(time);
+              client.print("\"");
               // temperature
               client.print(",\"temp\":\"");
               client.print(DHT.temperature,1);
@@ -122,11 +155,18 @@ void loop() {
               // close json
               client.println("}");
               // serial logging
-              Serial.print("ETHERNET req / temp: ");
-              Serial.print(DHT.temperature,1);
-              Serial.print(" C / humi: ");
-              Serial.print(DHT.humidity,1);
-              Serial.println(" %");
+              if (UARTDEBUG) {
+                delta = millis() - time;
+                Serial.print("-- ETHERNET req / time: ");
+                Serial.print(time);
+                Serial.print("+");
+                Serial.print(delta);
+                Serial.print(" / temp: ");
+                Serial.print(DHT.temperature,1);
+                Serial.print(" C / humi: ");
+                Serial.print(DHT.humidity,1);
+                Serial.println(" %");
+              }
             }
 
             // prepare for next request
@@ -155,6 +195,10 @@ void loop() {
 
 void formatIP(IPAddress ii) {
   sprintf(_buf,"%d.%d.%d.%d",ii[0],ii[1],ii[2],ii[3]);
+}
+
+void formatMAC() {
+  sprintf(_buf,"%02x:%02x:%02x:%02x:%02x:%02x",mac[0],mac[1],mac[2],mac[3],mac[4],mac[5]);
 }
 
 static void send_404(EthernetClient client) {

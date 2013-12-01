@@ -25,3 +25,5 @@ This repository contains snippets, photo and notes collected during development 
 Cantuina android app version 0.2 (and source code) that shows temperature and humidity with line graph.
 
   * Youtube demo : [http://youtu.be/NNndYjs97w4](http://youtu.be/NNndYjs97w4)
+  
+  * 20131201 update : added MAC and MILLIS() in response plus minor enhancements
