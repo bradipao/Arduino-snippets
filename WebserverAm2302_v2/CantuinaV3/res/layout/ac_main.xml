@@ -1,0 +1,211 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/linAcqbuttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <Button
+            android:id="@+id/btnSingle"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="@string/btn_single" />
+
+        <Button
+            android:id="@+id/btnHistory"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="@string/btn_history" />
+
+        <Button
+            android:id="@+id/btnContinuous"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="@string/btn_continuous" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linTemphumi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linAcqbuttons"
+        android:layout_marginTop="8dp"
+        android:baselineAligned="false" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/boxblue_round" >
+
+            <TextView
+                android:id="@+id/tvTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="48dp"
+                android:gravity="right"
+                android:text="@string/tv_temp"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvTemp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:text="@string/tv_celsius"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvTempMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tvTemp"
+                android:layout_marginRight="48dp"
+                android:gravity="right"
+                android:text="@string/tv_temp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvTempMax"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:text="@string/tv_max"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvTempMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tvTempMax"
+                android:layout_marginRight="48dp"
+                android:gravity="right"
+                android:text="@string/tv_temp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvTempMin"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:text="@string/tv_min"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/boxred_round" >
+
+            <TextView
+                android:id="@+id/tvHumi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="48dp"
+                android:gravity="right"
+                android:text="@string/tv_humi"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvHumi"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:text="@string/tv_prh"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvHumiMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tvHumi"
+                android:layout_marginRight="48dp"
+                android:gravity="right"
+                android:text="@string/tv_humi"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvHumiMax"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:text="@string/tv_max"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvHumiMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tvHumiMax"
+                android:layout_marginRight="48dp"
+                android:gravity="right"
+                android:text="@string/tv_humi"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvHumiMin"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:text="@string/tv_min"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnConnect"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/btn_connect" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnConnect"
+        android:layout_toRightOf="@id/btnConnect"
+        android:text="@string/tv_result" />
+
+    <com.echo.holographlibrary.LineGraph
+        android:id="@+id/tempGraph"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@id/btnConnect" />
+
+</RelativeLayout>

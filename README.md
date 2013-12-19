@@ -27,3 +27,7 @@ Cantuina android app version 0.2 (and source code) that shows temperature and hu
   * Youtube demo : [http://youtu.be/NNndYjs97w4](http://youtu.be/NNndYjs97w4)
   
   * 20131201 update : added MAC and MILLIS() in response plus minor enhancements
+  
+**WebserverAm2302_v2** : Same as WebserverAm2302 plus storing of 48 previous acquisitions at 30 minutes step.
+
+Cantuina android app version 0.3 (and source code) with graph of historical data and max/min values.
