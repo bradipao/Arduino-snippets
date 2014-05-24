@@ -33,3 +33,5 @@ Cantuina android app version 0.2 (and source code) that shows temperature and hu
 Cantuina android app version 0.3 (and source code) with graph of historical data and max/min values.
 
 **WebserverAm2302_v3** : Major code refactoring of WebserverAm2302_v2 plus support for 4 identical DHT22 sensors with history. To save RAM space values are now stored in integer (no more double).
+
+**WebserverAm2302_v4** : Added I2C temperature+pressure BMP085 sensor to WebserverAm2302_v3. To save RAM space history is now a quarter.
