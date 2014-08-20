@@ -26,7 +26,7 @@
 #define CHECKTIME        60000  // sampling interval     60s*1000ms =   60000 ms
 
 // increment last byte of MAC for multi-arduino in the same subnet
-byte mac[] = { 0xDE,0xAA,0xBB,0xCC,0xDD,0x01 };
+byte mac[] = { 0xDE,0xAA,0xBB,0xCC,0xDD,0x02 };
 
 // globals
 unsigned long tnow,thist,tcheck,delta;
