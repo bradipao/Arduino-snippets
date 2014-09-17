@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+    <color name="verydark_green">#ff003311</color>
+    <color name="dark_green">#ff006622</color>
+    <color name="light_green">#ff009933</color>
+    <color name="verylight_green">#ff00cc66</color>
+    
+    <color name="verylight_gray">#ffdddddd</color>
+    <color name="light_gray">#ffcccccc</color>
+    <color name="medium_gray">#ff999999</color>
+    <color name="dark_gray">#ff666666</color>
+    <color name="verydark_gray">#ff333333</color>
+ 
+</resources>

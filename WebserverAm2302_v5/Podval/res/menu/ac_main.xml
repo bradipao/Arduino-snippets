@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_netscan"
+        android:orderInCategory="10"
+        android:showAsAction="never"
+        android:title="@string/action_netscan"/>
+    <item
+        android:id="@+id/debug_arduclear"
+        android:orderInCategory="11"
+        android:showAsAction="never"
+        android:title="@string/action_arduclear"/>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="12"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+
+</menu>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bkg_cardview"
+    android:paddingBottom="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp" >
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ARDUINO NAME"
+        android:textColor="#FF000000" />
+
+    <TextView
+        android:id="@+id/tvOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@id/tvName"
+        android:text="OFF"
+        android:textColor="#FF666666" />
+    
+    <TextView
+        android:id="@+id/tvHwid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvName"
+        android:layout_alignParentRight="true"
+        android:text="MAC 11:22:33:44:55:66"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FF666666" />
+
+    <TextView
+        android:id="@+id/tvIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvName"
+        android:layout_alignParentLeft="true"
+        android:text="IP 192.168.1.2"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FF666666" />
+
+</RelativeLayout>

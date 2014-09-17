@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Podval</string>
+    
+    <string name="action_settings">Settings</string>
+    <string name="action_netscan">Scan network</string>
+    <string name="action_arduclear">Clear list</string>
+    <string name="action_editname">Edit Name</string>
+    <string name="action_readdata">Read Data</string>
+    <string name="action_readhist">Read History</string>
+    
+    <string name="hello_world">Hello world!</string>
+
+</resources>

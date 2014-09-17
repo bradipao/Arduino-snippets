@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_editname"
+        android:orderInCategory="10"
+        android:showAsAction="never"
+        android:title="@string/action_editname"/>
+    <item
+        android:id="@+id/action_readall"
+        android:orderInCategory="11"
+        android:showAsAction="never"
+        android:title="@string/action_readdata"/>
+
+</menu>

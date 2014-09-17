@@ -20,18 +20,22 @@ This repository contains snippets, photo and notes collected during development 
   
 **WebserverHttpgetJsonres** : Arduino webserver, with DHCP assigned IP provided through serial output. Parse incoming requests of a given format, extract params and update internal status of params. Response is always the whole internal status in JSON format. Serial output is used basically for debug and demonstration.
 
-**WebserverAm2302** : Arduino+Ethernet board that interfaces with AM2302(DHT22) humidity+temperature sensor and that implements basic webserver that provides real-time temperature and humidity data in JSON format.
+**WebserverAm2302** : Arduino+Ethernet board that interfaces with AM2302(DHT22) humidity+temperature sensor and that implements basic webserver that provides real-time temperature and humidity data in JSON format. (note: text is inefficiently stored in ram, F() function added since _v3)
 
-Cantuina android app version 0.2 (and source code) that shows temperature and humidity with line graph.
+  * Cantuina android app version 0.2 (and source code) that shows temperature and humidity with line graph.
 
   * Youtube demo : [http://youtu.be/NNndYjs97w4](http://youtu.be/NNndYjs97w4)
   
   * 20131201 update : added MAC and MILLIS() in response plus minor enhancements
   
-**WebserverAm2302_v2** : Same as WebserverAm2302 plus storing of 48 previous acquisitions at 30 minutes step.
+**WebserverAm2302_v2** : Same as WebserverAm2302 plus storing of 48 previous acquisitions at 30 minutes step. (note: text is inefficiently stored in ram, F() function added since _v3)
 
-Cantuina android app version 0.3 (and source code) with graph of historical data and max/min values.
+  * Cantuina android app version 0.3 (and source code) with graph of historical data and max/min values.
 
 **WebserverAm2302_v3** : Major code refactoring of WebserverAm2302_v2 plus support for 4 identical DHT22 sensors with history. To save RAM space values are now stored in integer (no more double).
 
 **WebserverAm2302_v4** : Added I2C temperature+pressure BMP085 sensor to WebserverAm2302_v3. To save RAM space history is now a quarter.
+
+**WebserverAm2302_v5** : Single answer on http://ww.xx.yy.zz/podval with history included. History is now a 24 half hours. Added support for missing sensors.
+
+  * Podval android app : supports multiple sensors in local network with automatic discovery.

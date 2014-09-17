@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="it.bradipao.podval"
+    android:versionCode="105"
+    android:versionName="1.05" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".PodvalApp"
+        android:allowBackup="true"
+        android:icon="@drawable/podval_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="it.bradipao.podval.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="PrefActivity"
+            android:label="@string/action_settings" >
+        </activity>
+        <activity
+            android:name="ArduinoActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="EditnameActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="SensorActivity"
+            android:label="@string/app_name" >
+        </activity>
+    </application>
+
+</manifest>
